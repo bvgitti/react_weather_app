@@ -1,13 +1,212 @@
-body {
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400&display=swap');
+
+* {
+  box-sizing: border-box;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+html{
+  height: 100%;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  font-size: 100%;
+  position: relative;
+  background-image: url("./img/back3.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: top center;
+}
+
+.App {
+  margin: 0 auto;
+}
+
+.wHeader {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  position: sticky;
+  top: 0;
+  font-size: 2vw;
+  color: beige;
+  text-shadow: 0.2rem 0.2rem 0.5rem black;
+  padding: .4vw 2vw;
+  background-color: rgba(245, 245, 220, .2);
+}
+
+#github {
+  display: block;
+  width: 40px;
+  height: 40px;
+  margin-top: 10px;
+  background-image: url("./img/github.png");
+  background-size: cover;
+  background-position: center center;
+}
+
+.location {
+  display: block;
+  margin-top: 3rem;
+  position: fixed;
+  left: 1rem;
+}
+
+#currentLoc {
+  font-size: calc(1rem + 1.2vw);
+  padding-left: 1vw;
+}
+
+#locSelector {
+  height: 2rem;
+  max-width: 16vw;
+  font-size: calc(0.5rem + 1.2vw);
+  padding-left: 1rem;
+  margin-top: 0.2rem;
+  border: none;
+  border-radius: 5rem 0 0 5rem;
+  background-color: rgba(245, 245, 220, .3);
+}
+
+#locButton {
+  font-family: 'Poppins', sans-serif;
+  height: 2rem;
+  width: 5rem;
+  font-size: calc(0.4rem + 1.2vw);
+  border: none;
+  border-radius: 0 5rem 5rem 0;
+  background-color: rgba(245, 245, 220, .3);
+}
+
+#locButton:hover {
+  background-color: rgb(78, 78, 78);
+  color: beige;
+}
+
+.today {
+  display: block;
+  height: 80%;
+  max-width: 60%;
+  margin: 0 auto 1vw auto;
+}
+
+#todayDate {
+  font-size: calc(0.8rem + 0.8vw);
+  position: fixed;
+  left: 65%;
+  top: 18%;
+}
+
+#todayDescr {
+  font-size: calc(1rem + 1.8vw);
+  position: fixed;
+  left: 65%;
+  top: 25%;
+}
+
+.todayList {
+  width: 50vw;
+  height: 24rem;
+  max-height: 56vh;
+  display: block;
+  overflow-y: scroll;
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+.todayList::-webkit-scrollbar {  /* Chrome, Safari, Opera */
+  display: none;
+}
+
+.todayItem {
+  display: block;
+  text-align: center;
+  justify-items: center;
+  width: 20vw;
+  min-width: 4rem;
+  max-height: 16vh;
+  min-height: 4rem;
+  background-color: rgba(245, 245, 220, .5);
+  border-radius: 1rem;
+  box-shadow: 0 0 3rem black;
+  margin: 0.5rem auto;
+  padding: 0.4rem;
+}
+
+#todayTime {
+  font-size: calc(0.6rem + 1vw);
+}
+
+#todayTemp {
+  font-size: calc(1rem + 2vw);
+}
+
+.sun {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  position: fixed;
+  left: 0;
+  bottom: 26%;
+  padding: 2rem;
+}
+
+#sunrise {
+  font-size: calc(0.8rem + 1.2vw);
+}
+
+#sunset {
+  font-size: calc(0.8rem + 1.2vw);
+}
+
+.forecast {
+  display: block;
+  align-content: center;
+  justify-content: center;
+  position: fixed;
+  bottom: 4%;
+  width: 100%;
+  height: 10rem;
+  min-height: 10vw;
+  overflow-x: scroll;
+  overflow-y:unset;
+  white-space: nowrap;
+}
+
+.forecastItem {
+  display: inline-block;
+  text-align: center;
+  justify-content: center;
+  width: 14vw;
+  min-width: 6rem;
+  height: calc(4rem + 5vw);
+  min-height: 6rem;
+  background-color: rgba(245, 245, 220, .5);
+  border-radius: 0.6rem;
+  box-shadow: 0.6rem 0.6rem 1rem black;
+  margin: auto 0.5vw;
+  padding: 0.6vw;
+}
+
+.forecastData {
+  font-size: calc(0.5rem + 0.8vw); 
+}
+
+#forecastTemp {
+  font-size: calc(1rem + 0.8vw);
+}
+
+.wFooter {
+  display: inline-block;
+  width: 100%;
+  text-align: end;
+  padding-right: 3rem;
+  background-color: rgba(245, 245, 220, .3);
+  position: fixed;
+  bottom: 0;
 }
