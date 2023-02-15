@@ -5,15 +5,20 @@ function Location({changeLocation, location}) {
     return (
         <div className= 'location' >
             <h2 id= 'currentLoc'>{location}</h2>
-            <input 
+            <input
+                autoFocus
                 id= 'locSelector'
                 type= 'text' 
                 placeholder='country or city'
             />
             <button
                 id= 'locButton'
-                onClick= {()=> changeLocation(document.querySelector('#locSelector').value)}
-            >Select
+                onClick= {()=> {
+                    changeLocation(document.querySelector('#locSelector').value);
+                    document.querySelector('#locSelector').value= '';
+                }}
+            >
+                Select
             </button>
         </div>
     );

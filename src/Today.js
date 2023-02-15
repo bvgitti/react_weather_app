@@ -2,16 +2,17 @@ import React from 'react';
 
 function Today({today}) {
 
-    //const currentTime= new Date().getHours();             //default init
-    const currentTime= 1;           // << to get actual weather informations delete this
-     //filtering out passed hours from hourly forecasts db
+    //filtering out passed hours from hourly forecasts db
+    const currentTime= new Date().getHours();
     const todayTempsArray= today.hours.filter(
         temps=> parseInt(temps.datetime.slice(0,2)) > currentTime
     );
-    //creating hourly forecasts list
+    //creating hourly list of forecasts
     const todayTempList= todayTempsArray.map((data, index)=> (
         <div className= 'todayItem' key= {index}>
-            <p id= 'todayTime'>{data.datetime}</p>
+            <p id= 'todayTime'>
+                {data.datetime.slice(0,-3)}
+            </p>
             <h2 id= 'todayTemp'>
                 {data.temp} &#8451;
             </h2>
@@ -26,8 +27,8 @@ function Today({today}) {
                 {todayTempList}
             </div>
             <div className= 'sun'>
-                <p id= 'sunrise'>Sunrise: {today.sunrise}</p>
-                <p id= 'sunset'>Sunset: {today.sunset}</p>
+                <p id= 'sunrise'>Sunrise: {today.sunrise.slice(0,-3)}</p>
+                <p id= 'sunset'>Sunset: {today.sunset.slice(0,-3)}</p>
             </div>
         </div>
     );

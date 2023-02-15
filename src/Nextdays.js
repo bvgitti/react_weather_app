@@ -3,10 +3,7 @@ import React from 'react';
 function NextDays({nextDaysData}) {
 
     //filtering out today datas from forecast db
-    const date= new Date();   //default
-    date.setFullYear(2022);     // <<to get actual
-    date.setMonth(8-1);         // <<weather informations
-    date.setDate(24);           // <<delete these !!!
+    const date= new Date();
     const todayMonth= (date.getMonth() +1) < 10 ? `0${date.getMonth() +1}` : `${date.getMonth() +1}`;
     const todayDate= date.getDate() < 10 ? `0${date.getDate()}` : `${date.getDate()}`;
     const today= `${date.getFullYear()}-${todayMonth}-${todayDate}`;
