@@ -5,7 +5,7 @@ function Today({today}) {
     //filtering out passed hours from hourly forecasts db
     const currentTime= new Date().getHours();
     const todayTempsArray= today.hours.filter(
-        temps=> parseInt(temps.datetime.slice(0,2)) > currentTime
+        temps=> parseInt(temps.datetime.slice(0,2)) >= currentTime
     );
     //creating hourly list of forecasts
     const todayTempList= todayTempsArray.map((data, index)=> (
