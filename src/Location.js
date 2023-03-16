@@ -1,6 +1,8 @@
-import React from 'react';
+import {useRef} from 'react';
 
 function Location({changeLocation, location}) {
+
+    const locationRef= useRef(null);
 
     return (
         <div className= 'location' >
@@ -10,12 +12,13 @@ function Location({changeLocation, location}) {
                 id= 'locSelector'
                 type= 'text' 
                 placeholder='country or city'
+                ref= {locationRef}
             />
             <button
                 id= 'locButton'
                 onClick= {()=> {
-                    changeLocation(document.querySelector('#locSelector').value);
-                    document.querySelector('#locSelector').value= '';
+                    changeLocation(locationRef.current.value);
+                    locationRef.current.value= '';
                 }}
             >
                 Select
